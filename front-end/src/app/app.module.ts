@@ -7,20 +7,17 @@ import { CreateRoomComponent } from './create-room/create-room.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
 import { RoomListComponent } from './room-list/room-list.component';
 import { UpdateRoomComponent } from './update-room/update-room.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     CreateRoomComponent,
     RoomDetailsComponent,
     RoomListComponent,
-    UpdateRoomComponent
+    UpdateRoomComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
