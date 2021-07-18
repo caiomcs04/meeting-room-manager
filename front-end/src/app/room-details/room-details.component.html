@@ -6,7 +6,7 @@
     <label><b>Nome </b></label> {{room.name}}
   </div>
   <div>
-    <label><b>Data</b></label> {{room.date}}
+    <label><b>Data</b></label> {{room.date | date: 'shortDate'}}
   </div>
   <div>
     <label><b>Início</b></label> {{room.startHour}}
