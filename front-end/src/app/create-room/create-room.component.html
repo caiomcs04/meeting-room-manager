@@ -1,30 +1,60 @@
-<h3>Create Room</h3>
-<div [hidden]="submitted" style="width: 400px;">
+<h3>Criar Sala</h3>
+<div [hidden]="submitted" style="width: 400px">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="room.name" name="name">
+      <label for="name">Nome</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="room.name"
+        name="name"
+      />
     </div>
-
+    <br />
     <div class="form-group">
-      <label for="name">date</label>
-      <input type="text" class="form-control" id="date" required [(ngModel)]="room.date" name="date">
+      <label for="name">Data</label>
+      <input
+        type="text"
+        class="form-control"
+        id="date"
+        required
+        [(ngModel)]="room.date"
+        name="date"
+      />
     </div>
-
+    <br />
     <div class="form-group">
-      <label for="name">startHour</label>
-      <input type="text" class="form-control" id="startHour" required [(ngModel)]="room.startHour" name="startHour">
+      <label for="name">Início</label>
+      <input
+        type="text"
+        class="form-control"
+        id="startHour"
+        required
+        [(ngModel)]="room.startHour"
+        name="startHour"
+      />
     </div>
-
+    <br />
     <div class="form-group">
-        <label for="name">endHour</label>
-        <input type="text" class="form-control" id="endHour" required [(ngModel)]="room.endHour" name="endHour">
-      </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
+      <label for="name">Fim</label>
+      <input
+        type="text"
+        class="form-control"
+        id="endHour"
+        required
+        [(ngModel)]="room.endHour"
+        name="endHour"
+      />
+    </div>
+    <br />
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
   </form>
 </div>
 
 <div [hidden]="!submitted">
-  <button class="btn btn-success" (click)="newRoom()">Add</button> -->
+  <button class="btn btn-success" (click)="newRoom()">Adicionar</button> -->
 </div>
