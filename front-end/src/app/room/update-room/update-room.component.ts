@@ -1,7 +1,7 @@
+import { RoomService } from './../../service/room.service';
 import { Component, OnInit } from '@angular/core';
-import { Room } from '../room';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RoomService } from '../room.service';
+import { Room } from 'src/app/room';
 
 @Component({
   selector: 'app-update-room',

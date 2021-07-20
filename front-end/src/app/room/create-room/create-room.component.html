@@ -2,7 +2,7 @@
   <div [hidden]="submitted" style="width: 400px">
     <h3 class="text-center">Criar Sala</h3>
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #formRoom="ngForm">
       <div class="form-group">
         <label for="name">Nome</label>
         <input
@@ -11,8 +11,15 @@
           id="name"
           required
           [(ngModel)]="room.name"
-          name="name"
+          name="nameInput"
+          #nameInput="ngModel"
+          required
         />
+        <app-message
+          class="ml-1"
+          message="Campo obrigatório"
+          *ngIf="nameInput.invalid && nameInput.touched"
+        ></app-message>
       </div>
       <br />
       <div class="form-group">
@@ -24,7 +31,14 @@
           required
           [(ngModel)]="room.date"
           name="date"
+          #dateInput ="ngModel"
+          required
         />
+        <app-message
+        class="ml-1"
+        message="Campo obrigatório"
+        *ngIf="dateInput.invalid && dateInput.touched"
+      ></app-message>
       </div>
       <br />
       <div class="form-group">
@@ -36,7 +50,14 @@
           required
           [(ngModel)]="room.startHour"
           name="startHour"
+          #startInput="ngModel"
+          required
         />
+        <app-message
+        class="ml-1"
+        message="Campo obrigatório"
+        *ngIf="startInput.invalid && startInput.touched"
+      ></app-message>
       </div>
       <br />
       <div class="form-group">
@@ -48,11 +69,18 @@
           required
           [(ngModel)]="room.endHour"
           name="endHour"
+          #endInput ="ngModel"
+          required
         />
+        <app-message
+        class="ml-1"
+        message="Campo obrigatório"
+        *ngIf="endInput.invalid && endInput.touched"
+      ></app-message>
       </div>
       <br />
       <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" [disabled]='formRoom.invalid'>Submit</button>
       </div>
     </form>
   </div>

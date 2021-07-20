@@ -1,9 +1,8 @@
-import { RoomService } from './../room.service';
+import { RoomService } from './../../service/room.service';
 import { Component, OnInit } from '@angular/core';
-import { RoomDetailsComponent } from '../room-details/room-details.component';
 import { Observable  } from 'rxjs';
-import {Room} from "../room";
 import {Router} from '@angular/router'
+import { Room } from 'src/app/room';
 
 @Component({
   selector: 'app-room-list',

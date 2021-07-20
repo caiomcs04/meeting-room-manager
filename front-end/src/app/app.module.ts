@@ -1,13 +1,15 @@
+import { RoomModule } from './room/room.module';
+import { MessageModule } from './components/message/message.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateRoomComponent } from './create-room/create-room.component';
-import { RoomDetailsComponent } from './room-details/room-details.component';
-import { RoomListComponent } from './room-list/room-list.component';
+import { CreateRoomComponent } from './room/create-room/create-room.component';
+import { RoomDetailsComponent } from './room/room-details/room-details.component';
+import { RoomListComponent } from './room/room-list/room-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateRoomComponent } from './update-room/update-room.component';
+import { UpdateRoomComponent } from './room/update-room/update-room.component';
 import localePt from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
 
@@ -18,17 +20,18 @@ registerLocaleData(localePt, 'pt')
 @NgModule({
   declarations: [
     AppComponent,
-    CreateRoomComponent,
     UpdateRoomComponent,
     RoomDetailsComponent,
     RoomListComponent,
-    RoomListComponent
+    RoomListComponent,
+    CreateRoomComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MessageModule
   ],
   providers: [
     /*Aqui em providers será declarada as localizações dos pipes do app*/

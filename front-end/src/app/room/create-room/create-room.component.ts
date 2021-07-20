@@ -1,6 +1,6 @@
-import { RoomService } from '../room.service';
-import { Room } from '../room';
-import { Component, OnInit } from '@angular/core';
+import { RoomService } from '../../service/room.service';
+import { Room } from '../../room';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,6 +17,10 @@ export class CreateRoomComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+  }
+
+  testeValid(){
+    console.log(this.room)
   }
 
   newRoom(): void {
