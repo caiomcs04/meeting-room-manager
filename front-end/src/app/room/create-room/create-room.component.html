@@ -14,12 +14,18 @@
           name="nameInput"
           #nameInput="ngModel"
           required
+          minlength="3"
         />
         <app-message
           class="ml-1"
-          message="Campo obrigatório"
-          *ngIf="nameInput.invalid && nameInput.touched"
+          message="Campo Obrigatório"
+          *ngIf="nameInput.errors?.required && nameInput.touched"
         ></app-message>
+        <app-message
+        class="ml-1"
+        message="Nome Inválido"
+        *ngIf="nameInput.errors?.minlength"
+      ></app-message>
       </div>
       <br />
       <div class="form-group">
