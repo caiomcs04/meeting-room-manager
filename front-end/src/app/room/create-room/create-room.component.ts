@@ -31,16 +31,31 @@ export class CreateRoomComponent implements OnInit {
   save() {
     this.roomService.createRoom(this.room)
       .subscribe(data => console.log(data), error => console.log(error));
-    this.room = new Room();
     this.gotoList();
+
   }
 
   onSubmit() {
     this.submitted = true;
-    this.save();
   }
 
   gotoList() {
+    this.room = new Room();
     this.router.navigate(['/rooms']);
+  }
+
+  gotoCreate() {
+    this.room = new Room();
+    this.submitted = false;
+  }
+
+  deleteRoom(id: number) {
+    console.log(id)
+    this.roomService.deleteRoom(id)
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+        },
+        (error: any) => console.log(error));
   }
 }

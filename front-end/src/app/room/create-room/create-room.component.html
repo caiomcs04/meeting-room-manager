@@ -86,6 +86,25 @@
   </div>
 
   <div [hidden]="!submitted">
-    <button class="btn btn-success" (click)="newRoom()">Adicionar</button> -->
+    <h2>Detalhes da Sala</h2>
+
+    <hr/>
+    <div *ngIf="room">
+      <div class="mt-2 d-flex justify-content-between">
+        <label><b>Nome: </b></label>
+        <div>{{room.name}}</div>
+      </div>
+      <div class="mt-2 d-flex justify-content-between">
+        <label><b>Data: </b></label> <div>{{room.date | date: 'shortDate'}}</div>
+      </div>
+      <div class="mt-2 d-flex justify-content-between">
+        <label><b>Início: </b></label> <div>{{room.startHour}}</div>
+      </div>
+        <div class="mt-2 d-flex justify-content-between">
+        <label><b>Fim: </b></label> <div>{{room.endHour}}</div>
+      </div>
+    </div>
+    <button class="btn btn-success d-block btn-form mt-2" (click)="save()">Adicionar</button>
+    <button (click)="gotoCreate()" class="btn btn-danger d-block mt-2 btn-form">Cancelar</button>
   </div>
 </div>
