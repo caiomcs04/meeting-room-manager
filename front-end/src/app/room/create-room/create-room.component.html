@@ -42,12 +42,20 @@
         />
         <app-message
           class="ml-2"
-          message="Nome Inválido"
+          message="Campo Obrigatório"
           *ngIf="
             newRoomForm.get('date')?.errors?.required &&
             newRoomForm.get('date')?.touched
           "
         ></app-message>
+        <app-message
+        class="ml-2"
+        message="Data Inválida"
+        *ngIf="
+          newRoomForm.get('date')?.errors?.dateValidator &&
+          newRoomForm.get('date')?.touched
+        "
+      ></app-message>
       </div>
       <br />
       <div class="form-group">

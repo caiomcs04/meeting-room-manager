@@ -4,6 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { nameValidator } from '../custom/validation/name.validator';
+import { dateValidator } from '../custom/validation/date.validator';
 
 @Component({
   selector: 'app-create-room',
@@ -21,8 +22,8 @@ export class CreateRoomComponent implements OnInit {
 
   ngOnInit() {
     this.newRoomForm = this.formBuilder.group({
-      name:['',[Validators.required, Validators.minLength(3), nameValidator]],
-      date:['', [Validators.required]],
+      name:['',[Validators.required, nameValidator]],
+      date:['', [Validators.required, dateValidator]],
       startHour:[''],
       endHour:['']
     })
