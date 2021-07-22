@@ -2,49 +2,52 @@
   <div [hidden]="submitted" style="width: 400px">
     <h3 class="text-center">Criar Sala</h3>
 
-    <form (ngSubmit)="onSubmit()" #formRoom="ngForm">
-      <div class="form-group">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group" [formGroup]="newRoomForm">
         <label for="name">Nome</label>
         <input
           type="text"
           class="form-control"
           id="name"
-          required
-          [(ngModel)]="room.name"
+          placeholder="Nome da Sala"
           name="nameInput"
-          #nameInput="ngModel"
-          required
-          minlength="3"
+          formControlName="name"
         />
         <app-message
-          class="ml-1"
+          class="ml-2"
           message="Campo Obrigatório"
-          *ngIf="nameInput.errors?.required && nameInput.touched"
+          *ngIf="
+            newRoomForm.get('name')?.errors?.required &&
+            newRoomForm.get('name')?.touched
+          "
         ></app-message>
         <app-message
-        class="ml-1"
-        message="Nome Inválido"
-        *ngIf="nameInput.errors?.minlength"
-      ></app-message>
+          class="ml-2"
+          message="Nome Inválido"
+          *ngIf="
+            newRoomForm.get('name')?.errors?.nameValidator &&
+            newRoomForm.get('name')?.touched
+          "
+        ></app-message>
       </div>
       <br />
-      <div class="form-group">
+      <div class="form-group" [formGroup]="newRoomForm">
         <label for="name">Data</label>
         <input
           type="date"
           class="form-control"
           id="date"
-          required
-          [(ngModel)]="room.date"
           name="date"
-          #dateInput ="ngModel"
-          required
+          formControlName="date"
         />
         <app-message
-        class="ml-1"
-        message="Campo obrigatório"
-        *ngIf="dateInput.invalid && dateInput.touched"
-      ></app-message>
+          class="ml-2"
+          message="Nome Inválido"
+          *ngIf="
+            newRoomForm.get('date')?.errors?.required &&
+            newRoomForm.get('date')?.touched
+          "
+        ></app-message>
       </div>
       <br />
       <div class="form-group">
@@ -60,10 +63,10 @@
           required
         />
         <app-message
-        class="ml-1"
-        message="Campo obrigatório"
-        *ngIf="startInput.invalid && startInput.touched"
-      ></app-message>
+          class="ml-1"
+          message="Campo obrigatório"
+          *ngIf="startInput.invalid && startInput.touched"
+        ></app-message>
       </div>
       <br />
       <div class="form-group">
@@ -75,18 +78,18 @@
           required
           [(ngModel)]="room.endHour"
           name="endHour"
-          #endInput ="ngModel"
+          #endInput="ngModel"
           required
         />
         <app-message
-        class="ml-1"
-        message="Campo obrigatório"
-        *ngIf="endInput.invalid && endInput.touched"
-      ></app-message>
+          class="ml-1"
+          message="Campo obrigatório"
+          *ngIf="endInput.invalid && endInput.touched"
+        ></app-message>
       </div>
       <br />
       <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-success" [disabled]='formRoom.invalid'>Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </div>
     </form>
   </div>
@@ -94,23 +97,30 @@
   <div [hidden]="!submitted">
     <h2>Detalhes da Sala</h2>
 
-    <hr/>
+    <hr />
     <div *ngIf="room">
       <div class="mt-2 d-flex justify-content-between">
         <label><b>Nome: </b></label>
-        <div>{{room.name}}</div>
+        <div>{{ room.name }}</div>
       </div>
       <div class="mt-2 d-flex justify-content-between">
-        <label><b>Data: </b></label> <div>{{room.date | date: 'shortDate'}}</div>
+        <label><b>Data: </b></label>
+        <div>{{ room.date | date: "shortDate" }}</div>
       </div>
       <div class="mt-2 d-flex justify-content-between">
-        <label><b>Início: </b></label> <div>{{room.startHour}}</div>
+        <label><b>Início: </b></label>
+        <div>{{ room.startHour }}</div>
       </div>
-        <div class="mt-2 d-flex justify-content-between">
-        <label><b>Fim: </b></label> <div>{{room.endHour}}</div>
+      <div class="mt-2 d-flex justify-content-between">
+        <label><b>Fim: </b></label>
+        <div>{{ room.endHour }}</div>
       </div>
     </div>
-    <button class="btn btn-success d-block btn-form mt-2" (click)="save()">Adicionar</button>
-    <button (click)="gotoCreate()" class="btn btn-danger d-block mt-2 btn-form">Cancelar</button>
+    <button class="btn btn-success d-block btn-form mt-2" (click)="save()">
+      Adicionar
+    </button>
+    <button (click)="gotoCreate()" class="btn btn-danger d-block mt-2 btn-form">
+      Cancelar
+    </button>
   </div>
 </div>

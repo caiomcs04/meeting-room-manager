@@ -1,20 +1,21 @@
-import { RoomDetailsComponent } from './room/room-details/room-details.component';
-import { CreateRoomComponent } from './room/create-room/create-room.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { RoomListComponent } from './room/room-list/room-list.component';
-import { UpdateRoomComponent } from './room/update-room/update-room.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'rooms', pathMatch: 'full' },
-  { path: 'rooms', component: RoomListComponent },
-  { path: 'add', component: CreateRoomComponent },
-  { path: 'update/:id', component: UpdateRoomComponent },
-  { path: 'details/:id', component: RoomDetailsComponent },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./room/room.module').then((module) => module.RoomModule),
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

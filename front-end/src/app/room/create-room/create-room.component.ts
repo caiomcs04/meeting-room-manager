@@ -2,6 +2,8 @@ import { RoomService } from '../../service/room.service';
 import { Room } from '../../room';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { nameValidator } from '../custom/validation/name.validator';
 
 @Component({
   selector: 'app-create-room',
@@ -12,11 +14,19 @@ export class CreateRoomComponent implements OnInit {
 
   room: Room | any = new Room();
   submitted = false;
+  newRoomForm!: FormGroup;
 
   constructor(private roomService: RoomService,
-    private router: Router) { }
+    private router: Router,  private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.newRoomForm = this.formBuilder.group({
+      name:['',[Validators.required, Validators.minLength(3), nameValidator]],
+      date:['', [Validators.required]],
+      startHour:[''],
+      endHour:['']
+    })
+
   }
 
   testeValid(){
@@ -36,12 +46,13 @@ export class CreateRoomComponent implements OnInit {
   }
 
   onSubmit() {
+    this.room = this.newRoomForm.value
     this.submitted = true;
   }
 
   gotoList() {
     this.room = new Room();
-    this.router.navigate(['/rooms']);
+    this.router.navigate(['']);
   }
 
   gotoCreate() {
