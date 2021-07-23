@@ -19,7 +19,7 @@
 > 	git clone https://github.com/caiomcs04/meeting-room-manager.git
 > ```
 
-## Execution in localhost
+## Execution back-end in localhost
 
 > - Open **meeting-room-manager/back-end** folder using an IDE of your choice
 >
@@ -39,17 +39,23 @@
 >
 > - Or you can use [Swagger](http://localhost:8083/swagger-ui.html#/) as well
 > 
->![Captura de tela de 2021-07-03 13-26-51](https://user-images.githubusercontent.com/66964367/124360844-5b048400-dc02-11eb-89f5-06c6ec4a7e74.png)
+>![Captura de tela de 2021-07-23 10-37-18](https://user-images.githubusercontent.com/66964367/126790188-93fd690c-46e5-483e-a05b-acf029ebf548.png)
 
-## Execution throuh Heroku
+## Execution Angular app
 
-> - To access H2 memory bank, go to [Heroku H2](https://peoplea-dio-api.herokuapp.com/h2)
-> 
-> - You can execute any crud using an API develoment plataform of your choice.
-> - To work with [People Entity] (https://peoplea-dio-api.herokuapp.com/people)
-> - To work with [Phone Entity] (https://peoplea-dio-api.herokuapp.com/phone)
-> 
-> - Or you can use [Swagger](https://peoplea-dio-api.herokuapp.com/swagger-ui.html#/) as well
+>Access your terminal project folder:
+> ```
+> 	cd [Your Project folder name]
+> ```
+> Than access the **frontendSantander** folder:
+> ```
+> 	cd [frontendSantander]
+> ```
+> Already the application's folder in your terminal, type the following command to install the node-modules:
+> ```
+> 	npm install
+> ```
+
 
 ## Functionalities
 
