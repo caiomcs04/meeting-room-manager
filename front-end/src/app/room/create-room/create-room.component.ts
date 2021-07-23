@@ -24,10 +24,9 @@ export class CreateRoomComponent implements OnInit {
     this.newRoomForm = this.formBuilder.group({
       name:['',[Validators.required, nameValidator]],
       date:['', [Validators.required, dateValidator]],
-      startHour:[''],
-      endHour:['']
+      startHour:['',[Validators.required]],
+      endHour:['',[Validators.required]]
     })
-
   }
 
   testeValid(){

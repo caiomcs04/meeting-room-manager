@@ -3,7 +3,7 @@
     <h3 class="text-center">Criar Sala</h3>
 
     <form (ngSubmit)="onSubmit()">
-      <div class="form-group" [formGroup]="newRoomForm">
+      <div class="form-group" [formGroup]="newRoomForm" #roomForm="ngForm">
         <label for="name">Nome</label>
         <input
           type="text"
@@ -58,46 +58,46 @@
       ></app-message>
       </div>
       <br />
-      <div class="form-group">
+      <div class="form-group" [formGroup]="newRoomForm">
         <label for="name">Início</label>
         <input
           type="time"
           class="form-control"
           id="startHour"
-          required
-          [(ngModel)]="room.startHour"
           name="startHour"
-          #startInput="ngModel"
-          required
+          formControlName="startHour"
         />
         <app-message
-          class="ml-1"
-          message="Campo obrigatório"
-          *ngIf="startInput.invalid && startInput.touched"
-        ></app-message>
+        class="ml-2"
+        message="Campo Obrigatório"
+        *ngIf="
+          newRoomForm.get('startHour')?.errors?.required &&
+          newRoomForm.get('startHour')?.touched
+        "
+      ></app-message>
       </div>
       <br />
-      <div class="form-group">
+      <div class="form-group" [formGroup]="newRoomForm">
         <label for="name">Fim</label>
         <input
           type="time"
           class="form-control"
           id="endHour"
-          required
-          [(ngModel)]="room.endHour"
           name="endHour"
-          #endInput="ngModel"
-          required
+          formControlName="endHour"
         />
         <app-message
-          class="ml-1"
-          message="Campo obrigatório"
-          *ngIf="endInput.invalid && endInput.touched"
-        ></app-message>
+        class="ml-2"
+        message="Campo Obrigatório"
+        *ngIf="
+          newRoomForm.get('endHour')?.errors?.required &&
+          newRoomForm.get('endHour')?.touched
+        "
+      ></app-message>
       </div>
       <br />
       <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" [disabled]="roomForm.invalid">Submit</button>
       </div>
     </form>
   </div>

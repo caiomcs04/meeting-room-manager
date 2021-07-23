@@ -8,7 +8,6 @@ export function nameValidator(control: AbstractControl) {
   for (let i = 0; i < value.length; i++) {
     for (let k = 0; k < letters.length; k++) {
       if (value[i].toLowerCase() === letters[k]) {
-        console.log("ok")
         check = true;
         break;
       }

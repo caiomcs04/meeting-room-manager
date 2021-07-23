@@ -20,10 +20,6 @@ const routes: Routes = [
         component: CreateRoomComponent,
       },
       {
-        path: 'add',
-        component: CreateRoomComponent,
-      },
-      {
         path: 'update/:id',
         component: UpdateRoomComponent,
       },
