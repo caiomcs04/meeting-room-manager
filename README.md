@@ -39,7 +39,7 @@
 >
 > - Or you can use [Swagger](http://localhost:8083/swagger-ui.html#/) as well
 > 
->![Captura de tela de 2021-07-23 10-37-18](https://user-images.githubusercontent.com/66964367/126790188-93fd690c-46e5-483e-a05b-acf029ebf548.png)
+> ![Captura de tela de 2021-07-23 10-37-18](https://user-images.githubusercontent.com/66964367/126791490-64d7d20c-57e4-4c91-bc1a-aec2d7fe0a07.png)
 
 ## Installation Angular app
 
