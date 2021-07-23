@@ -41,31 +41,39 @@
 > 
 >![Captura de tela de 2021-07-23 10-37-18](https://user-images.githubusercontent.com/66964367/126790188-93fd690c-46e5-483e-a05b-acf029ebf548.png)
 
-## Execution Angular app
+## Installation Angular app
 
 >Access your terminal project folder:
 > ```
 > 	cd [Your Project folder name]
 > ```
-> Than access the **frontendSantander** folder:
+> Than access the **front-end** folder:
 > ```
-> 	cd [frontendSantander]
+> 	cd [front-end]
 > ```
 > Already the application's folder in your terminal, type the following command to install the node-modules:
 > ```
 > 	npm install
 > ```
+> 
+## Execution
+
+>  When the installation is ready, start the front-end application with the command::
+> ```
+> 	ng s -o
+> ```
+>The application will be available for viewing in your browser, if this does not happen automatically open the browser at the following address: _localhost: 4200_
 
 
 ## Functionalities
 
-> - Localhost
-> You will be able to test all functionalities in [Swagger](http://localhost:8082/swagger-ui.html#/) 
-> And also will be able to check the data base in [H2](http://localhost:8082/h2)
+> - Back-end
+> You will be able to test all functionalities in [Swagger](http://localhost:8085/swagger-ui.html#/) 
+> And also will be able to check the data base in [H2](http://localhost:8085/h2)
 
-> - Heroku
-> You will be able to test all functionalities in [Swagger](https://peoplea-dio-api.herokuapp.com/swagger-ui.html) 
-> And also will be able to check the data base in [H2](https://peoplea-dio-api.herokuapp.com/h2)
+> - Front-end
+> You will be able to execute all cruds.
+> Check all data, create it, update it and delete it.
 
 ## Contribution
 
