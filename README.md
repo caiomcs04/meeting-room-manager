@@ -16,20 +16,20 @@
 
 > - Clone this project in your machine with the command:
 > ```
-> 	git clone https://github.com/caiomcs04/personalapi.git
+> 	git clone https://github.com/caiomcs04/meeting-room-manager.git
 > ```
 
 ## Execution in localhost
 
-> - Open **personalapi** folder using an IDE of your choice
+> - Open **meeting-room-manager/back-end** folder using an IDE of your choice
 >
 > - Load marven changes in build.gradle file if your IDE doesn't do it automatically
 >
-> - Run PersonalapiApplication(~/personalapi/src/main/java/one/dio/personalapi)
+> - Run MeetingroomApplication(~/back-end/src/main/java/com/digital/crud/meetingroom/meetingroom)
 >
-> - After starting the service go to [H2 memory bank](http://localhost:8083/h2)
+> - After starting the service go to [H2 memory bank](http://localhost:8085/h2)
 >
-> - Change **JDBC URL** to **jdbc:h2:~/personalapi**
+> - Change **JDBC URL** to **jdbc:h2:~/meetingroom_db**
 >
 > ![Captura de tela de 2021-07-03 13-24-10](https://user-images.githubusercontent.com/66964367/124360783-082acc80-dc02-11eb-944c-58aabe735d21.png)
 >
