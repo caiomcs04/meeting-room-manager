@@ -37,7 +37,7 @@
 >
 > - You can execute any crud using an API develoment plataform of your choice
 >
-> - Or you can use [Swagger](http://localhost:8083/swagger-ui.html#/) as well
+> - Or you can use [Swagger](http://localhost:8085/swagger-ui.html#/) as well
 > 
 > ![Captura de tela de 2021-07-23 10-39-25](https://user-images.githubusercontent.com/66964367/126791647-975169c8-8ddc-4ba4-8607-ad394595d416.png)
 
