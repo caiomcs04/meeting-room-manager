@@ -1,4 +1,4 @@
-package com.digital.crud.meetingroom.meetingroom.exception;
+package com.tenax.server.exception;
 
 import java.util.Date;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.digital.crud.meetingroom.meetingroom.exception;
+package com.tenax.server.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
