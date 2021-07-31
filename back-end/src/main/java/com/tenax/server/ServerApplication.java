@@ -1,4 +1,4 @@
-package com.digital.crud.meetingroom.meetingroom;
+package com.tenax.server;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -10,14 +10,14 @@ import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
-public class MeetingroomApplication {
+public class ServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MeetingroomApplication.class, args);
+		SpringApplication.run(ServerApplication.class, args);
 	}
 
 	@Bean
-	public OpenAPI customOpenAPI(@Value("Meeting Room API") String description){
+	public OpenAPI customOpenAPI(@Value("Server Management AOI") String description){
 		return new OpenAPI().info(new Info()
 				.title(description)
 				.version("2.0")
