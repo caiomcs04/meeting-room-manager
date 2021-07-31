@@ -1,4 +1,4 @@
-package com.tenax.server.model;
+package com.digital.crud.meetingroom.meetingroom.model;
 
 import lombok.*;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name="tb_server")
-public class Server {
+@Table(name="meetingroomdb")
+public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,8 +26,13 @@ public class Server {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description", nullable = false)
-    private String description;
+    @Column(name = "date", nullable = false)
+    private String date;
 
+    @Column(name = "startHour", nullable = false)
+    private String startHour;
+
+    @Column(name = "endHour", nullable = false)
+    private String endHour;
 
 }

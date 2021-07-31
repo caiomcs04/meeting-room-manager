@@ -8,11 +8,11 @@
 		<version>2.5.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.tenax.server</groupId>
-	<artifactId>tenaxserver</artifactId>
+	<groupId>com.digital.crud.meetingroom</groupId>
+	<artifactId>meetingroom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tenaxserver</name>
-	<description>server manager</description>
+	<name>meetingroom</name>
+	<description>meeting room manager</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -20,11 +20,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
