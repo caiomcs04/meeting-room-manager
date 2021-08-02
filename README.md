@@ -23,7 +23,7 @@
 
 > - Open **meeting-room-manager/back-end** folder using an IDE of your choice
 >
-> - Load marven changes in build.gradle file if your IDE doesn't do it automatically
+> - Load maven changes in pom.xml file if your IDE doesn't do it automatically
 >
 > - Run MeetingroomApplication(~/back-end/src/main/java/com/digital/crud/meetingroom/meetingroom)
 >
